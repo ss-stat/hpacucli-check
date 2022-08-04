@@ -15,7 +15,7 @@
 			Created : 01/08/2022
 			
 		.LINK
-			
+			https://github.com/ss-stat/hpacucli-check
 #>
 
 $HPACUCLI="c:\zabbix\Bin\hpacucli.exe"
