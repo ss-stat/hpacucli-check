@@ -21,6 +21,7 @@
 $HPACUCLI="c:\zabbix\Bin\hpacucli.exe"
 $IGNORE_Battery_ERROR=$true # Ignore failed cache battery errors
 $MAIL=""
+$HL_MAIL=""
 
 $ERROR_FOUND=$false
 $EmailMessage = ""
@@ -175,7 +176,7 @@ $EmailMessage = $EmailMessage, $msg -join '<br />'
 
 
 $MessageParams = @{
-    'To' = $MAIL+", "+$HL_MAIL
+    'To' = @($MAIL, $HL_MAIL)
     'Subject' = "RAID Report : [ERRORS] detected on $HOSTNAME ["+(Get-Date).ToString('dd-MM-yyyy HH:mm')+"]" 
     'Body' = $EmailMessage
 }
